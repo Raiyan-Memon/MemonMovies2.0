@@ -48,6 +48,7 @@ $(function () {
             box.classList.add("col-md-3");
             box.classList.add("col-6");
             box.classList.add("mt-2");
+            box.classList.add("movie-detail");
             box.innerHTML = `
             <img src="${IMGPATH + item.poster_path}" loading="lazy" decoding="async" class="card-img-top" alt="...">
                         <div class="card-body">
@@ -81,7 +82,10 @@ $(function () {
     $('#submit').on('click', function (e) {
       e.preventDefault();
     })
+
+    
+    $(document).on('click', '.movie-detail', function(){
+        alert('sfd');
+    })
   
-  
-    //check value
 })
