@@ -7,6 +7,13 @@ body{
     background-color: var(--memon-theme-color);
     /* width: 100%; */
 }
+.card-group a{
+    all: unset;
+}
+.card-group a:hover{
+    all: unset;
+    cursor: pointer;
+}
 
 .mylogo{
     display: inline-block;
@@ -32,6 +39,10 @@ ul li{
 
 .ott-logo ul{
     margin-bottom: 0px;
+}
+
+.text-dark{
+   color:  rgba(255,255,255,.5) !important;
 }
 
 .ott-background{
@@ -76,3 +87,8 @@ ul li{
     padding-right: 0px;
     padding-left: 0px;
 }
+
+.title-color{
+    color: white;
+}
+
