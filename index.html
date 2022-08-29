@@ -14,8 +14,8 @@
 <body>
     <div class="container-fluid">
         <div class="sticky-top">
-        <p class="text-center my-4"><img class="mylogo" src="images/logo.jpeg" width="350px" alt=""></p>
-    </div>
+            <p class="text-center my-4"><img class="mylogo" src="images/logo.jpeg" width="350px" alt=""></p>
+        </div>
         <!-- navbar -->
         <nav class="navbar navbar-expand-lg sticky-top navbar-dark bg-dark">
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -44,10 +44,10 @@
                         <a class="nav-link" href="#">Dual Audio</a>
                     </li> -->
                 </ul>
-                <form class="form-inline my-2 my-lg-0">
-                    <input class="form-control form-control-sm mr-sm-2 search-input" type="search" placeholder="Search"
+                <form action="/index.html" method="get" class="form-inline my-2 my-lg-0">
+                    <input class="form-control inputwidth form-control-sm mr-sm-2 search-input" type="search" placeholder="Search for Movies"
                         aria-label="Search">
-                    <button class="btn btn-outline-success btn-sm my-2 my-sm-0" type="submit">Search</button>
+                    <button class="btn btn-outline-success custom-btn search btn-sm my-2 my-sm-0" id="submit" type="submit">Search</button>
                 </form>
             </div>
         </nav>
@@ -86,52 +86,14 @@
                 </div>
             </div>
 
-            <div class="row-mx-3 flex-md-row">
-                <div class="card-group">
-                    <div class="card m-2">
-                        <!-- <a href="movie-detail.html"> -->
-                            <img src="images/movie-images/1.jpg" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">Downlaod Adanis kutsal kevda </h5>
-                            </div>
-                        <!-- </a> -->
-                    </div>
-                    <div class="card m-2">
-                        <a class="" href="sonic2.html">
-                            <img src="images/movie-images/2.jpg" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">Downlaod Sonic 2 - The Hedgehog</h5>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="card m-2">
-                        
-                        <img src="images/movie-images/3.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Downlaod The Cellar</h5>
-                        </div>
-                    
+            
 
-                    </div>
-                    <div class="card m-2">
-                        <img src="images/movie-images/4.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Download Dragon Ball Z</h5>
-                        </div>
-                    </div>
-                    <div class="card m-2">
-                        <img src="images/movie-images/5.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Download The Ledge</h5>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <div class="custom-row row" id="searched"></div>
 
-
-            <div class="row-mx-3 flex-md-row">
-                <div class="card-group">
-                    <div class="card m-2">
+            <!-- <div class="custom-row row-mx-3 flex-md-row"> -->
+                <div class="row" id="root">
+                <!-- <div class="card-group" id="root"> -->
+                    <!-- <div class="card m-2">
                         <img src="images/movie-images/6.jpg" class="card-img-top" alt="...">
                         <div class="card-body">
                             <h5 class="card-title">Downlaod League of SuperPets </h5>
@@ -160,12 +122,14 @@
                         <div class="card-body">
                             <h5 class="card-title">Download The Northman</h5>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>
     </div>
     <script src="bootstrap/js/jQuery.js"></script>
+    <script src="bootstrap/js/Ajax.js"></script>
+    <script src="script.js"></script>
     <script src="bootstrap/js/bootstrap.min.js"></script>
 </body>
 
