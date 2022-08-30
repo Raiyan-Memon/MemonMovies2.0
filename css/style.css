@@ -102,6 +102,12 @@ ul li{
     padding: 0%;
 }
 
+#exampleModal {
+    display: 'flex';
+    justify-content: 'center';
+    align-items: 'center';
+}
+
 
 
 @media only screen and (max-width: 600px) {

@@ -58,7 +58,7 @@ $(function () {
             <img data-toggle="modal" data-target="#exampleModal" src="${
               IMGPATH + item.poster_path
             }" decoding="async" class="card-img-top" alt="...">
-                        <div class="card-body">
+                        <div data-toggle="modal" data-target="#exampleModal" class="card-body">
                             <h5 class="card-title">Downlaod ${item.title} </h5>
                         </div>
                         <input type="hidden" id="movie_id" value="${item.id}">
@@ -130,9 +130,27 @@ $(function () {
         console.log("video")
         console.log(res.results);
 
+        if(res.results.length === 0){
+          alert('No Trailer Found');
+          setTimeout(() => {
+            $('.closemodal').trigger("click");
+          }, 500);
+         }
+
         for(let i = 0; i<res.results.length; i ++){
             // console.log(res.results[i].name);
-            if(res.results[i].name == "Official Trailer"){
+
+            if(res.results.length == 1){
+
+              var key =  res.results[i].key
+              console.log(key);
+
+            } 
+            else if(res.results[i].name == "Official Trailer" || res.results[i].name == "Trailer" || res.results[i].name == "Official Trailer [Subtitled]" || res.results[i].name == "Official Trailer 2" || res.results[i].name == "Main Trailer" ){ 
+              // || res.results[i].name.includes("Trailer") 
+              // if(res.results[i].name.includes("Official") || res.results[i].name.includes("Trailer")){
+
+              // if(apiname.includes("Trailer")){
                var key =  res.results[i].key
                console.log(key);
             }
@@ -144,6 +162,6 @@ $(function () {
   });
 
   $(document).on('click', '.closemodal', function(){
-        // $('.modal-body').reset()
+        $('.gettrailervideo').attr("src", "")
   })
 });
