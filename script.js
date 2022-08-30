@@ -4,7 +4,10 @@ $(function () {
   // alert(`This page is under Production so please be patient. -- Raiyan Memon`);
 
   // var APIURL = "https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=04c35731a5ee918f014970082a0088b1&page=";
-  const IMGPATH = "https://image.tmdb.org/t/p/w1280";
+  const IMGPATH = "https://image.tmdb.org/t/p/w342";
+  //set to 342
+  // quality of images - 154, 185, 342, 500, 780,  1280
+
   const SEARCHAPI =
     "https://api.themoviedb.org/3/search/movie?&api_key=04c35731a5ee918f014970082a0088b1&query=";
   //   https://api.themoviedb.org/3/discover/movie?api_key=THE_KEY&with_origin_country=IN
@@ -44,7 +47,7 @@ $(function () {
 
       getres.forEach((item) => {
         console.log(item.id);
-        console.log(IMGPATH + item.poster_path);
+        console.log(IMGPATH);
         const box = document.createElement("div");
         box.classList.add("col-md-3");
         box.classList.add("col-6");
@@ -115,7 +118,8 @@ $(function () {
         $(".modal-title").text(res.title);
         $(".overview").text(res.overview);
         $(".moviebyclass").attr("src", IMGPATH + res.poster_path);
-        // console.log(IMGPATH + res.poster_path)
+       
+        console.log(IMGPATH + res.poster_path)
       },
     });
 
