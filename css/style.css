@@ -95,6 +95,8 @@ ul li{
 
 .movie-detail{
     cursor: pointer;
+    /* margin: 0px; */
+    
 }
 
 .typed-category ul, .ott-logo ul{
@@ -163,6 +165,10 @@ ul li{
     position: absolute;
     right: 0%;
     top: -1%;
+}
+
+.movie-detail{
+    padding: 5px;
 }
 }
 
