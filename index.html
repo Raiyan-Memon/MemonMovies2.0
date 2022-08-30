@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
     <meta name="viewport" content="width=\, initial-scale=1.0">
     <title>MemonMovies2.0</title>
     <link rel="icon" type="image/x-icon" href="images/favicon.png">
@@ -12,12 +13,6 @@
 </head>
 
 <body>
-
-    <!-- Button trigger modal -->
-<!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-    Launch demo modal
-  </button>
-   -->
   <!-- Modal -->
   <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" id="modal-root" role="document">
@@ -29,10 +24,10 @@
           </button>
         </div>
         <div class="modal-body">
-          <div class="overview"></div>
+          <!-- <div class="overview"></div>
           <div class="image">
             <img src="" class="moviebyclass" width="200px" alt="">
-          </div>
+          </div> -->
           <div class="trailervideo">
             <iframe width="80%" height="315" class="gettrailervideo" src="https://www.youtube.com/embed/br5cxQXKtuc"
             title="YouTube video player" frameborder="0"
