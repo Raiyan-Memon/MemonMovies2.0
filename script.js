@@ -57,7 +57,7 @@ $(function () {
         box.innerHTML = `
             <img data-toggle="modal" data-target="#exampleModal" src="${
               IMGPATH + item.poster_path
-            }" loading="lazy" decoding="async" class="card-img-top" alt="...">
+            }" decoding="async" class="card-img-top" alt="...">
                         <div class="card-body">
                             <h5 class="card-title">Downlaod ${item.title} </h5>
                         </div>
