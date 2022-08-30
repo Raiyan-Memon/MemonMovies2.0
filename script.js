@@ -146,7 +146,7 @@ $(function () {
               console.log(key);
 
             } 
-            else if(res.results[i].name.includes("Official Trailer") || res.results[i].name == "Official Trailer" || res.results[i].name == "Trailer" || res.results[i].name == "Official Trailer [Subtitled]" || res.results[i].name == "Official Trailer 2" || res.results[i].name == "Main Trailer" ){ 
+            else if(res.results[i].name.includes("Official Trailer") || res.results[i].name == "Official Trailer" || res.results[i].name == "Trailer" || res.results[i].name == "Official Trailer [Subtitled]" || res.results[i].name == "Official Trailer 2" || res.results[i].name == "Main Trailer" || res.results[i].name.includes("Trailer") ){ 
               // || res.results[i].name.includes("Trailer") 
               // if(res.results[i].name.includes("Official") || res.results[i].name.includes("Trailer")){
 
