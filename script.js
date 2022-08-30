@@ -165,4 +165,9 @@ $(function () {
         $('.gettrailervideo').attr("src", "")
         $('.movie-title').text("");
   })
+
+  $(document).on("click", function(){
+    $('.gettrailervideo').attr("src", "")
+
+  })
 });
