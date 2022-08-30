@@ -56,7 +56,7 @@ ul li{
 .butt1 {
     background: linear-gradient(to bottom, #b5c3ed 18%, #06f7f7 100%);
     border-radius: 10px;
-    min-width: 50px;
+    min-width: 30px;
     cursor: pointer ;
     color: #5c5c5c;
     margin: 5px -3px 4px 7px;
@@ -95,6 +95,13 @@ ul li{
 .movie-detail{
     cursor: pointer;
 }
+
+.typed-category ul, .ott-logo ul{
+    margin: 0%;
+    padding: 0%;
+}
+
+
 
 @media only screen and (max-width: 600px) {
 
