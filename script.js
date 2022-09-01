@@ -1,6 +1,18 @@
 // alert('sadf')
 
 $(function () {
+
+
+  //  var mytry = 1
+
+  //  if(mytry == 2){
+  //   alert('if');
+  //  } else if(mytry == 1){
+  //   alert("else if")
+  //  }
+
+  
+
   // alert(`This page is under Production so please be patient. -- Raiyan Memon`);
 
   // var APIURL = "https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=04c35731a5ee918f014970082a0088b1&page=";
@@ -12,7 +24,7 @@ $(function () {
     "https://api.themoviedb.org/3/search/movie?&api_key=04c35731a5ee918f014970082a0088b1&query=";
   //   https://api.themoviedb.org/3/discover/movie?api_key=THE_KEY&with_origin_country=IN
   //34319 total pages
-  for (var i = 1; i <= 10; i++) {
+  for (var i = 1; i <= 1; i++) {
     // var APIURL ="https://api.themoviedb.org/3/discover/movie/popular&api_key=04c35731a5ee918f014970082a0088b1&page="+i;
 
     var APIURL =
@@ -46,8 +58,8 @@ $(function () {
       }
 
       getres.forEach((item) => {
-        console.log(item.id);
-        console.log(IMGPATH);
+        // console.log(item.id);
+        // console.log(IMGPATH);
         const box = document.createElement("div");
         box.classList.add("col-md-3");
         box.classList.add("col-6");
@@ -91,7 +103,7 @@ $(function () {
   });
 
   $(document).on("click", ".movie-detail", function () {
-    console.log($(this).find("#movie_id").val());
+    // console.log($(this).find("#movie_id").val());
     let movieid = $(this).find("#movie_id").val();
 
     const APIBYID =
@@ -114,12 +126,12 @@ $(function () {
         //     box.innerHTML = `
         //   `;
         //     rootdata.appendChild(box);
-        console.log(res);
+        // console.log(res);
         $(".modal-title").text(res.title);
         $(".overview").text(res.overview);
         $(".moviebyclass").attr("src", IMGPATH + res.poster_path);
-       
-        console.log(IMGPATH + res.poster_path)
+
+        // console.log(IMGPATH + res.poster_path);
       },
     });
 
@@ -127,47 +139,124 @@ $(function () {
       url: Trailerbyid,
       type: "GET",
       success: function (res) {
-        console.log("video")
-        console.log(res.results);
+        // console.log("video");
+        // console.log(res.results);
 
-        if(res.results.length === 0){
-          alert('No Trailer Found');
+        if (res.results.length === 0) {
+          alert("No Trailer Found");
           setTimeout(() => {
-            $('.closemodal').trigger("click");
+            $(".closemodal").trigger("click");
           }, 500);
-         }
-
-        for(let i = 0; i<res.results.length; i ++){
-            // console.log(res.results[i].name);
-
-            if(res.results.length == 1){
-
-              var key =  res.results[i].key
-              console.log(key);
-
-            } 
-            else if(res.results[i].name.includes("Official Trailer") || res.results[i].name == "Official Trailer" || res.results[i].name == "Trailer" || res.results[i].name == "Official Trailer [Subtitled]" || res.results[i].name == "Official Trailer 2" || res.results[i].name == "Main Trailer" || res.results[i].name.includes("Trailer") ){ 
-              // || res.results[i].name.includes("Trailer") 
-              // if(res.results[i].name.includes("Official") || res.results[i].name.includes("Trailer")){
-
-              // if(apiname.includes("Trailer")){
-               var key =  res.results[i].key
-               console.log(key);
-            }
         }
 
-        $(".gettrailervideo").attr("src", "https://www.youtube.com/embed/"+key);
+        for (let i = 0; i < res.results.length; i++) {
+          // console.log(res.results[i].name);
+
+          if (res.results.length == 1) {
+            var key = res.results[i].key;
+            // console.log(key);
+          } else if (
+            res.results[i].name.includes("Official Trailer") ||
+            res.results[i].name == "Official Trailer" ||
+            res.results[i].name == "Trailer" ||
+            res.results[i].name == "Official Trailer [Subtitled]" ||
+            res.results[i].name == "Official Trailer 2" ||
+            res.results[i].name == "Main Trailer" ||
+            res.results[i].name.includes("Trailer")
+          ) {
+            // || res.results[i].name.includes("Trailer")
+            // if(res.results[i].name.includes("Official") || res.results[i].name.includes("Trailer")){
+
+            // if(apiname.includes("Trailer")){
+            var key = res.results[i].key;
+            // console.log(key);
+          }
+        }
+
+        $(".gettrailervideo").attr(
+          "src",
+          "https://www.youtube.com/embed/" + key
+        );
       },
     });
   });
 
-  $(document).on('click', '.closemodal', function(){
-        $('.gettrailervideo').attr("src", "")
-        $('.movie-title').text("");
-  })
+  $(document).on("click", ".closemodal", function () {
+    $(".gettrailervideo").attr("src", "");
+    $(".movie-title").text("");
+  });
 
-  $(document).on("click", function(){
-    $('.gettrailervideo').attr("src", "")
+  $(document).on("click", function () {
+    $(".gettrailervideo").attr("src", "");
+  });
+  
 
-  })
+
+
+    //pagination-custom
+  //on click of prev
+  $('#prev').on('click', prevfun);
+
+   function prevfun() {
+
+    // console.log('prev');
+    var prevcount = $('#countinput').val();
+    // console.log(prevcount);
+    var toint = parseInt(prevcount);
+    // console.log(typeof(toint));
+    var store = $('#countinput').val(--toint);
+    // console.log($('#countinput').val());
+    $('#count').text($('#countinput').val());
+
+
+    //data on pagination
+    var APIURL2 = "https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=04c35731a5ee918f014970082a0088b1&page=";
+
+    $('.custom').remove();
+    var getdata = $('#countinput').val();
+    var searchval = APIURL2 + getdata;
+    // console.log(searchval);
+    getmovies(searchval);
+    disable();
+  }
+
+
+  //on click of next
+  $('#next').on('click', nextfun)
+
+   function nextfun() {
+
+    // console.log('next');
+    var nextcount = $('#countinput').val();
+    // console.log(nextcount);
+    var tointn = parseInt(nextcount);
+    // console.log(typeof (tointn));
+    var store = $('#countinput').val(++tointn);
+    // console.log($('#countinput').val());
+    $('#count').text($('#countinput').val());
+
+
+    //data on pagination
+    var APIURL1 = "https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=04c35731a5ee918f014970082a0088b1&page=";
+
+    $('.custom').remove();
+    var getdata = $('#countinput').val();
+    var searchval = APIURL1 + getdata;
+    getmovies(searchval);
+    disable();
+  }
+
+  function disable() {
+
+    if ($('#countinput').val() == '1') {
+      $('#prev').addClass('disabled');
+    } else {
+      $('#prev').removeClass('disabled');
+    }
+  }
+
+
+
+
+
 });
