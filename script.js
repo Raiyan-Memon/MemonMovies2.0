@@ -1,36 +1,13 @@
-// alert('sadf')
-
 $(function () {
-
-
-  //  var mytry = 1
-
-  //  if(mytry == 2){
-  //   alert('if');
-  //  } else if(mytry == 1){
-  //   alert("else if")
-  //  }
-
-
-
 // loader
-  // $(document).ajaxStart(function(){
-  //   $(".show-loader").addClass('loader');
-  // });
-  // $(document).ajaxComplete(function(){
-  //   $(".show-loader").removeClass('loader');
-  // });
-
   $(document).on({
     ajaxStart: function(){
       $(".show-loader").addClass('loader'); 
     },
     ajaxStop: function(){ 
-
       setTimeout(() => {
         $(".show-loader").removeClass('loader');
       }, 3000);
-
     }    
 });
   

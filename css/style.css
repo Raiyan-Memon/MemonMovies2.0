@@ -146,13 +146,12 @@ ul li{
 
 #count, #next:hover{
 
-background-color: redcd;
+background-color: red;
 }
 
 .footer{
     color: white;
 }
-
 
 /* loader */
 .loader {
@@ -164,18 +163,16 @@ background-color: redcd;
     -webkit-animation: spin 2s linear infinite; /* Safari */
     animation: spin 2s linear infinite;
   }
-  
   /* Safari */
   @-webkit-keyframes spin {
     0% { -webkit-transform: rotate(0deg); }
     100% { -webkit-transform: rotate(360deg); }
   }
-  
   @keyframes spin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
   }
-
+/* endloader */
 
 @media only screen and (max-width: 600px) {
 
