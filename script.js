@@ -261,6 +261,7 @@ $(function () {
 
   $('.ott-logo ul li').on('click', function(){
     console.log($(this).attr('id'));
+    alert("This Section Is Under Development")
   })
 
 
