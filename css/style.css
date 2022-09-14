@@ -42,6 +42,10 @@ ul li{
     margin-bottom: 0px;
 }
 
+.ott-logo ul li:hover{
+    cursor: pointer;
+}
+
 .text-dark{
    color:  rgba(255,255,255,.5) !important;
 }
@@ -142,7 +146,7 @@ ul li{
 
 #count, #next:hover{
 
-background-color: red;
+background-color: redcd;
 }
 
 .footer{

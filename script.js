@@ -44,6 +44,7 @@ $(function () {
         url: APIURL,
         type: "GET",
         success: function (res) {
+          console.log(res)
           showResOnUI(res.results);
         },
       });
@@ -237,7 +238,7 @@ $(function () {
 
 
     //data on pagination
-    var APIURL1 = "https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=04c35731a5ee918f014970082a0088b1&page=";
+    var APIURL1 = "https://api.themoviedb.org/3/discover/movie?sort_by=popularity.asc&api_key=04c35731a5ee918f014970082a0088b1&page=";
 
     $('.custom').remove();
     var getdata = $('#countinput').val();
@@ -255,6 +256,25 @@ $(function () {
     }
   }
 
+
+  $('.ott-logo ul li').on('click', function(){
+
+    $("#root").html("");
+    console.log($(this).attr('id'));
+
+    var ottValue = $(this).attr('id');
+
+
+    var APIBYOTT = "https://api.themoviedb.org/3/discover/tv?sort_by=popularity.asc&with_networks=Netflix&api_key=04c35731a5ee918f014970082a0088b1";
+
+    getmovies(APIBYOTT);
+
+
+    // https://www.themoviedb.org/network/213
+    // &networks=Netflix
+
+
+  })
 
 
 
