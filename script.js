@@ -11,7 +11,33 @@ $(function () {
   //   alert("else if")
   //  }
 
+
+
+// loader
+  // $(document).ajaxStart(function(){
+  //   $(".show-loader").addClass('loader');
+  // });
+  // $(document).ajaxComplete(function(){
+  //   $(".show-loader").removeClass('loader');
+  // });
+
+  $(document).on({
+    ajaxStart: function(){
+      $(".show-loader").addClass('loader'); 
+    },
+    ajaxStop: function(){ 
+
+      setTimeout(() => {
+        $(".show-loader").removeClass('loader');
+      }, 3000);
+
+    }    
+});
   
+
+
+
+
 
   // alert(`This page is under Production so please be patient. -- Raiyan Memon`);
 
