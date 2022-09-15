@@ -153,6 +153,11 @@ background-color: red;
     color: white;
 }
 
+.email-hover:hover{
+    color: yellow !important;
+    
+}
+
 
 .li-bullet {
     /* list-style: none; */
