@@ -64,20 +64,21 @@ $(function () {
             // console.log(item.id);
             // console.log(IMGPATH);
             const box = document.createElement("div");
-            box.classList.add("col-md-3");
-            box.classList.add("col-6");
-            box.classList.add("mt-2");
+            box.classList.add("col-md-2");
+            box.classList.add("col-4");
+            // box.classList.add("mt-2");
             box.classList.add("movie-detail");
     
             box.innerHTML = `
-                <img data-toggle="modal" data-target="#exampleModal" src="${
-                  IMGPATH + item.poster_path
-                }" decoding="async" class="card-img-top" alt="...">
-                            <div data-toggle="modal" data-target="#exampleModal" class="card-body ">
-                                <h5 class="card-title">${item.title} </h5>
-                            </div>
-                            <input type="hidden" id="movie_id" value="${item.id}">
-                      `;
+            <img data-toggle="modal" data-target="#exampleModal" src="${
+              IMGPATH + item.poster_path
+            }" decoding="async" class="card-img-top shadow p-1 bg-dark rounded" alt="...">
+                        <div data-toggle="modal" data-target="#exampleModal" class="card-body bg-gray ">
+                        <p class="card-title border-bottom text-center date-text">${moment(item.release_date).format('DD-MMM-YYYY')} </p>
+                            <p class="card-title">${item.title} </p>
+                        </div>
+                        <input type="hidden" id="movie_id" value="${item.id}">
+                  `;
             rootdata.appendChild(box);
           });
         }

@@ -52,7 +52,7 @@ $(function () {
               IMGPATH + item.poster_path
             }" decoding="async" class="card-img-top shadow p-1 bg-dark rounded" alt="...">
                         <div data-toggle="modal" data-target="#exampleModal" class="card-body bg-gray ">
-                        <p class="card-title border-bottom text-center date-text">${item.release_date} </p>
+                        <p class="card-title border-bottom text-center date-text">${moment(item.release_date).format('DD-MMM-YYYY')} </p>
                             <p class="card-title">${item.title} </p>
                         </div>
                         <input type="hidden" id="movie_id" value="${item.id}">
@@ -60,6 +60,7 @@ $(function () {
         rootdata.appendChild(box);
       });
     }
+
     console.timeEnd("function #1");
   } //forloop
 
