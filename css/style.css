@@ -169,6 +169,10 @@ background-color: red;
     padding: 5px;
 }
 
+.card-img-top{
+    color: white;
+}
+
 .li-bullet {
     /* list-style: none; */
 line-height: 40px;
