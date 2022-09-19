@@ -126,9 +126,6 @@ $(function () {
             res.results[i].name == "Main Trailer" ||
             res.results[i].name.includes("Trailer")
           ) {
-            // || res.results[i].name.includes("Trailer")
-            // if(res.results[i].name.includes("Official") || res.results[i].name.includes("Trailer")){
-            // if(apiname.includes("Trailer")){
             var key = res.results[i].key;
           }
         }

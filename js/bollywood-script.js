@@ -61,8 +61,6 @@ $(function () {
           }
     
           getres.forEach((item) => {
-            // console.log(item.id);
-            // console.log(IMGPATH);
             const box = document.createElement("div");
             box.classList.add("col-md-2");
             box.classList.add("col-4");
@@ -124,18 +122,9 @@ $(function () {
           url: APIBYID,
           type: "GET",
           success: function (res) {
-            //     const rootdata = document.querySelector("#modal-root");
-            //     const box = document.createElement("div");
-            //     box.classList.add("modal-content");
-            //     box.innerHTML = `
-            //   `;
-            //     rootdata.appendChild(box);
-            // console.log(res);
             $(".modal-title").text(res.title);
             $(".overview").text(res.overview);
             $(".moviebyclass").attr("src", IMGPATH + res.poster_path);
-    
-            // console.log(IMGPATH + res.poster_path);
           },
         });
     
@@ -143,9 +132,6 @@ $(function () {
           url: Trailerbyid,
           type: "GET",
           success: function (res) {
-            // console.log("video");
-            // console.log(res.results);
-    
             if (res.results.length === 0) {
               alert("No Trailer Found");
               setTimeout(() => {
@@ -154,11 +140,8 @@ $(function () {
             }
     
             for (let i = 0; i < res.results.length; i++) {
-              // console.log(res.results[i].name);
-    
               if (res.results.length == 1) {
                 var key = res.results[i].key;
-                // console.log(key);
               } else if (
                 res.results[i].name.includes("Official Trailer") ||
                 res.results[i].name == "Official Trailer" ||
@@ -168,12 +151,7 @@ $(function () {
                 res.results[i].name == "Main Trailer" ||
                 res.results[i].name.includes("Trailer")
               ) {
-                // || res.results[i].name.includes("Trailer")
-                // if(res.results[i].name.includes("Official") || res.results[i].name.includes("Trailer")){
-    
-                // if(apiname.includes("Trailer")){
                 var key = res.results[i].key;
-                // console.log(key);
               }
             }
     
@@ -193,25 +171,15 @@ $(function () {
       $(document).on("click", function () {
         $(".gettrailervideo").attr("src", "");
       });
-      
     
-    
-    
-        //pagination-custom
+      //pagination-custom
       //on click of prev
       $('#prev').on('click', prevfun);
-    
        function prevfun() {
-    
-        // console.log('prev');
         var prevcount = $('#countinput').val();
-        // console.log(prevcount);
         var toint = parseInt(prevcount);
-        // console.log(typeof(toint));
         var store = $('#countinput').val(--toint);
-        // console.log($('#countinput').val());
         $('#count').text($('#countinput').val());
-    
     
         //data on pagination
         var APIURL2 = "https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&with_origin_country=IN&api_key=04c35731a5ee918f014970082a0088b1&page=";
@@ -219,7 +187,6 @@ $(function () {
         $('.custom').remove();
         var getdata = $('#countinput').val();
         var searchval = APIURL2 + getdata;
-        // console.log(searchval);
         getmovies(searchval);
         disable();
       }
