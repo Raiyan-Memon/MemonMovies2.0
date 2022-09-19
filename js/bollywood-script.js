@@ -66,6 +66,7 @@ $(function () {
             box.classList.add("col-4");
             // box.classList.add("mt-2");
             box.classList.add("movie-detail");
+            box.classList.add("new-box");
     
             box.innerHTML = `
             <img data-toggle="modal" data-target="#exampleModal" src="${

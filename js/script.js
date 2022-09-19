@@ -47,6 +47,7 @@ $(function () {
         // box.classList.add("p-4");
 
         box.classList.add("movie-detail");
+        box.classList.add("new-box");
         box.innerHTML = `
             <img data-toggle="modal" data-target="#exampleModal" src="${
               IMGPATH + item.poster_path
